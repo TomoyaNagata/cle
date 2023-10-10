@@ -5,7 +5,11 @@ if(isset($_GET['room'])){
 }
 $name=$_SESSION['name'];
 if($_SERVER['REQUEST_METHOD']==='POST'){
-    $db=new mysqli('localhost:8889','root','root','kadai');
+    $host='localhost:8889';
+    $username='root';
+    $password='root';
+    $database='kadai';
+    $db=new mysqli($host,$username,$password,$database);
     if(!$db){
         die($db->error);
     }
